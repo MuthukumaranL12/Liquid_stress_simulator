@@ -33,10 +33,9 @@ pip-wheel-metadata/
 *.egg-info/
 
 # Runtime / artifacts
-# Keep the folders tracked in repo so deployment platforms (Streamlit) find them.
-# Ignore only transient files or backups inside those folders.
-data/*.tmp
-models/*.bak
+data/
+models/
+*.joblib
 *.log
 
 # Database
