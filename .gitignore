@@ -1,0 +1,20 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
+.pytest_cache/
+coverage/
+
+# data and runtime artifacts
+data/
+models/
+*.joblib
+
+# OS files
+Thumbs.db

@@ -1,0 +1,13 @@
+streamlit run app.py
+Start the app with: streamlit run app.py
+
+How to try the new features locally
+
+Activate venv:
+source .venv/Scripts/activate
+Start the dashboard:
+streamlit run app.py
+In the sidebar try:
+Toggle "Use rolling features" to add rolling stats
+Toggle "Show learning curve" and "Show residuals"
+Toggle "Compute SHAP explanations" (install shap first if you want full SHAP visuals)
