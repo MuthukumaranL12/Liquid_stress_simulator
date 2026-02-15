@@ -5,7 +5,8 @@ matplotlib>=3.7
 joblib>=1.3
 # pytest (dev)
 # pytest
-streamlit==1.19.0
+streamlit>=1.32.0
+#streamlit version changed
 altair==4.2.2
 requests>=2.31
 # dev/test deps commented out
