@@ -16,11 +16,17 @@ def what(file, h: Optional[bytes] = None) -> Optional[str]:
 
     Returns one of: 'jpeg','png','gif','bmp','tiff','webp','ico' or None.
     """
-    header = h
+    # allow callers to pass raw header bytes as the `file` argument (matches CPython `imghdr.what` behaviour when used in tests)
+    if isinstance(file, (bytes, bytearray)) and h is None:
+        header = bytes(file)
+    else:
+        header = h
+
     if header is None:
-        # If a filename (str / bytes / os.PathLike), read its header
+        # If a filename (str / os.PathLike), read its header; or accept a file-like object
         try:
             if isinstance(file, (str, bytes)):
+                # bytes-as-filename handled above; this branch is for str paths
                 with open(file, "rb") as f:
                     header = f.read(32)
             else:
