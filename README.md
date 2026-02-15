@@ -32,6 +32,19 @@ What the run produces
 - `data/metrics.json` — regression + detection metrics
 - `models/rf_model.joblib` — persisted trained model
 
+Deploy to Streamlit Cloud (recommended)
+
+1) Push this repository to GitHub (create repo if needed). The repo must include `app.py` and `requirements.txt` at the top level and the committed `models/rf_model.joblib` + `data/simulated_data.csv` files.
+
+2) Go to https://share.streamlit.io and log in. Click **New app** → choose your GitHub repo/branch and set `app.py` as the entrypoint.
+
+3) Enable **Auto deploy** in the Streamlit app settings so the app refreshes whenever you push to the selected branch.
+
+Automatic artifact refresh (optional)
+
+- There is a GitHub Actions workflow `.github/workflows/generate_artifacts.yml` which can re-run `train_model.py` on a schedule or by manual dispatch and commit updated `models/` and `data/` back to `main`.
+- This workflow runs only on manual dispatch and on a daily schedule to avoid push loops.
+
 Development & testing
 
 - Run the test suite: `pytest -q`
