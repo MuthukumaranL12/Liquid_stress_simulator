@@ -1,20 +1,54 @@
+# Virtual envs
 .venv/
+venv/
+env/
+
+# Environment variables
 .env
+
+# Byte-compiled / cache
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
 .Python
+
+# Jupyter
 .ipynb_checkpoints/
+
+# IDEs / editors
 .vscode/
-.DS_Store
+.idea/
+.ropeproject/
+
+# Test / coverage
 .pytest_cache/
+.coverage
 coverage/
 
-# data and runtime artifacts
-data/
-models/
-*.joblib
+# Build / packaging
+dist/
+build/
+pip-wheel-metadata/
+*.egg-info/
+
+# Runtime / artifacts
+# Keep the folders tracked in repo so deployment platforms (Streamlit) find them.
+# Ignore only transient files or backups inside those folders.
+data/*.tmp
+models/*.bak
+*.log
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
 
 # OS files
+.DS_Store
 Thumbs.db
+
+# Misc
+.cache/
+*.bak
+*.swp
